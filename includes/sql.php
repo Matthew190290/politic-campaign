@@ -39,6 +39,10 @@ function find_by_id($table,$id)
             return null;
      }
 }
+
+/*---------------------------------------------------------------*/
+/*funcion para ver la cantidad de votantes que tiene un determinado lider*/
+/*-------------------------------------------------------------------*/
  function voters_by_lider($table,$id){
   global $db;
   $sql = "SELECT COUNT(v.lider_id) AS voter_cant FROM votantes v INNER JOIN lideres l  ON l.id = v.lider_id where v.lider_id= '{$db->escape($id)}'";
